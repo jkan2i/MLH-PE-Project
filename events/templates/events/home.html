@@ -2,13 +2,166 @@
 
 {% block content %}
 	<center>
-	<h1>Hello {{ name }}! Events For {{ month }} {{ year }}</h1>
 
-	As of {{ time }}
-	<br/><br/>
-	{{ cal|safe }}
+	<head>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+		<script src="{% static 'js/main.js' %}"></script>   
+
+		</head>
+
+ <!-- ======= Home Section ======= -->
+
+	<section id="jobhome">
+		<div class="jobhome-container">
+			<h3>Welcome to <strong>My Club</strong></h3>
+			<h1>Finding it difficult to get a job?</h1>
+			<h2>Let us help you!</h2>
+			
+
+		<form class="d-flex" method=POST action="{% url 'search-venues' %}">
+			<div class="me-2">
+				<label>Job title,keywords or company</label><br/>
+				<span style="position: relative; display: inline-block;">
+				<input class="form-control mr-2" type="text" style="position: relative;vertical-align: top;" name="searched" aria-expanded="false">
+				</span>
+			</div>
+
+			<div>
+				<label>Location</label><br/>
+				<span style="position: relative; display: inline-block;">
+        		<input class="form-control ml-2" type="text" style="position: relative;vertical-align: top;" name="searched" aria-expanded="false">
+				</span> 
+		</div>
+
+			<button class=" mb-3 ms-2 mt-4 btn btn-light btn-outline-secondary" type="submit">Find Jobs</button>
+		</form>
+		<a href="#about" class="btn-get-started scrollto">About us</a>
+		</div>
+
+</section>
 	<br/><br/><br/><br/>
+
+
+	 <!-- ======= End of Home Section ======= -->
+
+
+	  <!-- ======= About Section ======= -->
+
+<section id="about" class="about">
+	<div class="container">
+  
+		<div class="section-title">
+			<h2>About</h2>
+			<h3>Learn More <span>About Us</span></h3>
+			<p>Let us give you more reasons why you should join our community 😊</p>
+		</div>
+  
+		<div class="row content">
+			<div class="col-lg-6">
+			<h3>Mission</h3>
+			  <p>
+				💡 Our mission is to create a small community with students and early-career professionals and help them get the jobs they desire with ease.
+				When you join us you will feel:
+			  </p>
+			  <ul>
+				<li><i class="ri-check-double-line"></i> satisfied, because you've found a community! </li>
+				<li><i class="ri-check-double-line"></i> happy, because you'll find a job you desire</li>
+			  </ul>
+			</div>
+			<div class="col-lg-6 pt-4 pt-lg-0">
+			<h3>Vision</h3>
+			  <p>
+				💡 To reduce the amount of unemployed students and early-career professionals in our community so that they can achieve their dream career.
+			  </p>
+			</div>
+		  </div>
+  
+		</div>
+	  </section>
+
+	  <!-- ======= End of About Section ======= -->
+
+ <!-- ======= Team Section ======= -->
+ <section id="team" class="team">
+	<div class="container">
+
+	  <div class="section-title">
+		<h2>Team</h2>
+		<h3>Our Hardworking <span>Team</span></h3>
+		<p>Meet the team and our contact if you want to reach out to us</p>
+	  </div>
+
+	  <div class="row">
+
+		<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+		  <div class="member">
+			<div class="member-img">
+			  <img src="{% static 'img/girl2.png' %}" class="img-fluid" alt="">
+			  <div class="social">
+				<a href=""><img src="{% static '/assets/facebook.svg' %}" alt="Bootstrap" width="32" height="32"></a>
+				<a href=""><img src="{% static '/assets/linkedin.svg' %}" alt="Bootstrap" width="32" height="32"></a>
+			  </div>
+			</div>
+			<div class="member-info">
+			  <h4>Lois </h4>
+			</div>
+		  </div>
+		</div>
+
+		<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+		  <div class="member">
+			<div class="member-img">
+				<img src="{% static 'img/girl1.jpg' %}" class="img-fluid" alt="">
+				<div class="social">
+					<a href=""><img src="{% static '/assets/facebook.svg' %}" alt="Bootstrap" width="32" height="32"></a>
+					<a href=""><img src="{% static '/assets/linkedin.svg' %}" alt="Bootstrap" width="32" height="32"></a>
+			  </div>
+			</div>
+			<div class="member-info">
+			  <h4>Jodie </h4>
+			</div>
+		  </div>
+		</div>
+
+		<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+		  <div class="member">
+			<div class="member-img">
+				<img src="{% static 'img/girl3.png' %}" class="img-fluid" alt="">
+				<div class="social">
+					<a href=""><img src="{% static '/assets/facebook.svg' %}" alt="Bootstrap" width="32" height="32"></a>
+					<a href=""><img src="{% static '/assets/linkedin.svg' %}" alt="Bootstrap" width="32" height="32"></a>
+			  </div>
+			</div>
+			<div class="member-info">
+			  <h4>Kanishka </h4>
+			</div>
+		  </div>
+		</div>
+
+		<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+		  <div class="member">
+			<div class="member-img">
+				<img src="{% static 'img/girl4.png' %}" class="img-fluid" alt="">
+			  <div class="social">
+				<a href=""><img src="{% static '/assets/facebook.svg' %}" alt="Bootstrap" width="32" height="32"></a>
+				<a href=""><img src="{% static '/assets/linkedin.svg' %}" alt="Bootstrap" width="32" height="32"></a>
+
+			  </div>
+			</div>
+			<div class="member-info">
+			  <h4>Yechi </h4>
+			</div>
+		  </div>
+		</div>
+
+	  </div>
+
+	</div>
+  </section>
+
 	Copyright (c) {{ current_year }}
 
 	</center>
+
 {% endblock %}
